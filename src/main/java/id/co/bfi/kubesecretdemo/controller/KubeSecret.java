@@ -21,7 +21,7 @@ public class KubeSecret {
     private String kubeString() {
         defaultClient.setBasePath("http://localhost");
         String secretName = "secret-test";
-        String nameSpace = "";
+        String nameSpace = "default";
         try {
             V1Secret mySecret = apiInstance.readNamespacedSecret(secretName, nameSpace, "true");
             System.out.println(mySecret);
