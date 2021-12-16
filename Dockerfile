@@ -10,7 +10,7 @@ LABEL maintainer="muhammad.galang@bfi.co.id"
 RUN mkdir conf
 
 # Make port 8002 available to the world outside this container
-EXPOSE 8002
+EXPOSE 8080
 
 # The application's jar file
 ARG JAR_FILE=build/libs/kube-secret-demo-1.0.jar

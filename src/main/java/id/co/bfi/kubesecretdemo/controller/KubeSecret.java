@@ -1,7 +1,5 @@
 package id.co.bfi.kubesecretdemo.controller;
 
-import id.co.bfi.kubesecretdemo.util.Utility;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,27 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KubeSecret {
 
-    @Autowired
-    private Utility util;
+    @Value("${api.version}")
+    private String apiVersion;
 
-    @Value("${apiVersion}")
-    private String configName;
+    @Value("${api.key}")
+    private String apiKey;
 
-//    @Value("${secretValue}")
-//    private String secretValue;
-
-    @GetMapping("/get-string")
-    public String getString() {
-        return configName;
+    @GetMapping("/get-api-version")
+    public String getApiVersion() {
+        return apiVersion;
     }
 
-    @GetMapping("/get-string-kube")
-    public String getStringKube() {
-        return util.kubeSecretResolver("default", "secret-test");
+    @GetMapping("/get-api-key")
+    public String getApiKey() {
+        return apiKey;
     }
 
-//    @GetMapping("/get-secret-as-env")
-//    public String getEnvKube() {
-//        return secretValue;
-//    }
 }
