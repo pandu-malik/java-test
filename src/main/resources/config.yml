@@ -1,8 +1,9 @@
-spring:
-  cloud:
-    kubernetes:
-      secrets:
-        namespace: default
-        name: dbprops
-        enabled: true
-        enableApi: true
+#spring:
+#  cloud:
+#    kubernetes:
+#      secrets:
+#        namespace: default
+#        name: dbprops
+#        enabled: true
+#        enableApi: true
+#
