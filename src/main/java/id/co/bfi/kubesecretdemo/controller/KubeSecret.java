@@ -1,5 +1,7 @@
 package id.co.bfi.kubesecretdemo.controller;
 
+import id.co.bfi.kubesecretdemo.services.KubeSecretService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,13 @@ public class KubeSecret {
     @Value("${api.key}")
     private String apiKey;
 
+    private KubeSecretService kubeSecretService;
+
+    @Autowired
+    public KubeSecret(KubeSecretService kubeSecretService) {
+        this.kubeSecretService = kubeSecretService;
+    }
+
     @GetMapping("/get-api-version")
     public String getApiVersion() {
         return apiVersion;
@@ -21,6 +30,21 @@ public class KubeSecret {
     @GetMapping("/get-api-key")
     public String getApiKey() {
         return apiKey;
+    }
+
+    @GetMapping("/get-db-config")
+    public String getDbConfig() {
+        return kubeSecretService.dbConfigString();
+    }
+
+    @GetMapping("/database-connection-test")
+    public String dbConnectiontest() {
+        return kubeSecretService.dbConnectionTest();
+    }
+
+    @GetMapping("/get-new-config")
+    public String getNewConfig() {
+        return kubeSecretService.getNewConfig();
     }
 
 }

@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: java-test
   datasource:
-    url: ${DB_HOST}
-    username: ${DB_USER}
-    password: ${DB_PASS}
+    url: ${host}
+    username: ${username}
+    password: ${password}
 api:
-  version: ${API_VER}
-  key: ${API_KEY}
+  version: 1.0.1
+  key: none
