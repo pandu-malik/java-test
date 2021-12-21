@@ -1,17 +1,6 @@
 spring:
   application:
     name: java-test
-  datasource:
-    url: ${host}
-    username: ${username}
-    password: ${password}
-#  cloud:
-#    kubernetes:
-#      secrets:
-#        enable-api: true
-#        enabled: true
-#        namespace: default
-#        name: dbprops
 api:
   version: 1.0.1
   key: none
