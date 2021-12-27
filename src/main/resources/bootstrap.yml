@@ -3,3 +3,4 @@ spring:
     kubernetes:
       secrets:
         enableApi: true
+        namespace: sealed-secret
