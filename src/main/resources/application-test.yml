@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://34.101.137.78:5432/postgres
+    username: postgres
+    password: postgres
+api:
+  key: api_key_on_test
+  version: 1.01

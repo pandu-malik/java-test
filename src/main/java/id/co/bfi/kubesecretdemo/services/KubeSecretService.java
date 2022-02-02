@@ -1,8 +1,6 @@
 package id.co.bfi.kubesecretdemo.services;
 
 import id.co.bfi.kubesecretdemo.model.DummyData;
-import id.co.bfi.kubesecretdemo.repo.DummyDataRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
